@@ -269,41 +269,6 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
   </div>
 </section>
 
-<!-- PTL -->
-<section>
-  <h2>6 · PTL — partner calls about shifting</h2>
-  <div class="card" id="ptl">
-<h3>308 of 23,196 partner tickets (1.3%) mention shifting — 251 are genuinely about the shifting process</h3>
-    <div class="scroll"><table>
-      <thead><tr><th>What the partner is calling about</th><th>Total</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul (1–19)</th></tr></thead>
-      <tbody>
-        <tr><td><b>Chasing their shifting payout</b></td><td><b>73</b></td><td>40</td><td>19</td><td>5</td><td>9</td></tr>
-        <tr><td class="mut" style="padding-left:26px">— Not received after completing the shift</td><td class="mut">38</td><td class="mut">26</td><td class="mut">7</td><td class="mut">2</td><td class="mut">3</td></tr>
-        <tr><td class="mut" style="padding-left:26px">— Extra wiring cost, who pays</td><td class="mut">17</td><td class="mut">10</td><td class="mut">4</td><td class="mut">0</td><td class="mut">3</td></tr>
-        <tr><td class="mut" style="padding-left:26px">— When / how much will I get</td><td class="mut">12</td><td class="mut">2</td><td class="mut">6</td><td class="mut">2</td><td class="mut">2</td></tr>
-        <tr><td class="mut" style="padding-left:26px">— Amount unclear or disputed</td><td class="mut">6</td><td class="mut">2</td><td class="mut">2</td><td class="mut">1</td><td class="mut">1</td></tr>
-        <tr><td>Wrong ticket type raised</td><td>40</td><td>18</td><td>7</td><td>9</td><td>6</td></tr>
-        <tr><td>Ticket stuck — app will not let them close it</td><td>38</td><td>11</td><td>5</td><td>6</td><td class="dn">16</td></tr>
-        <tr><td>Routed to an area the partner cannot serve</td><td>26</td><td>17</td><td>1</td><td>2</td><td>6</td></tr>
-        <tr><td>Customer unreachable / refusing / postponing</td><td>26</td><td>8</td><td>6</td><td>4</td><td>8</td></tr>
-        <tr><td>Netbox recovery after customer moved</td><td>24</td><td>11</td><td>3</td><td>5</td><td>5</td></tr>
-        <tr><td>Process help &amp; general queries</td><td>24</td><td>13</td><td>6</td><td>2</td><td>3</td></tr>
-        <tr class="tot"><td>Shifting-process tickets</td><td>251</td><td>118</td><td>47</td><td>33</td><td>53</td></tr>
-        <tr><td class="mut">Incidental mention (not shifting process)</td><td class="mut">45</td><td class="mut">18</td><td class="mut">9</td><td class="mut">12</td><td class="mut">6</td></tr>
-        <tr><td class="mut">₹2,000 wallet breach dispute</td><td class="mut">12</td><td class="mut">2</td><td class="mut">7</td><td class="mut">3</td><td class="mut">0</td></tr>
-      </tbody>
-    </table></div>
-
-    <div class="call bad"><b>Payout is the single biggest reason a partner calls about shifting — 73 tickets, 29% of all shifting-process calls.</b> Half of those are the blunt version: the shift was done and the money never arrived. A further 17 are partners asking who absorbs extra wiring cost, which the ₹100/₹200 flat rate card does not answer.</div>
-
-    <div class="call warn"><b>Payout complaints appear to lag the payout cycle, which makes the current low numbers misleading.</b> Complaints peaked in April (40) and fell to 5 in June — yet June and July are precisely the months whose payouts were never run. The most plausible reading is that April's spike reflects an earlier failed cycle and partners have not yet started chasing the ₹46.3k currently outstanding. <span class="mut">This is inference from the timing pattern, not established causation — but if it holds, expect a payout-complaint spike in August–September.</span></div>
-
-    <div class="call"><b>"App will not let me close the ticket" jumped to 16 in July from 6 in June</b> — the sharpest movement in the table, and it lines up with July's 40% open/unreachable rate. Some share of what the tracker records as an unresolved shift may be a shift that was physically completed but could not be closed in the app. Worth confirming with the app team before reading July's open rate as a field-execution failure.</div>
-
-    <div class="call"><b>66 tickets — over a quarter — are routing and ticket-type errors</b> (wrong TT type 40, un-serviceable area 26). These are cases where the system sent the partner something it should never have sent. That is the cheapest thing on this page to fix, and it is upstream of both the TAT and the confirmation numbers.</div>
-  </div>
-</section>
-
 <!-- SO WHAT -->
 <section>
   <h2>What this adds up to</h2>
@@ -312,14 +277,14 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
       <li><b>Only ~42% of shifting requests end in a verified shift.</b> The largest single failure mode is the customer becoming unreachable after raising the request (DNP) — now 147 cases a month and rising while volume falls.</li>
       <li><b>Withdrawing ping-based closure was the right call, but it was a measurement change, not a fix.</b> Genuine customer-confirmed shifts rose 23%→35%. The demand that ping used to absorb is now visible as open and denied cases.</li>
       <li><b>The manual sheet is the bottleneck.</b> Confirmation, eligibility and payout are three independently-maintained columns, and they disagree with each other. June's payout is still only two-thirds unpaid seven weeks on; July's has not started.</li>
-      <li><b>Partners are financing the delay.</b> ₹46.3k across 260 payments is outstanding, and the top partner complaint on PTL is chasing exactly this money.</li>
+      <li><b>Partners are financing the delay.</b> ₹46.3k across 260 payments is outstanding — money owed for work already completed in the field.</li>
       <li><b>Tenure is not the story.</b> Against the active customer base, every tenure cohort requests shifting at 4.8–8.5 per 1,000 — a 1.8× spread. The 6× new-customer skew appears only if you use the total installed base as the denominator, which is inflated by long-lapsed customers. One genuine outlier: 3–6 month customers complete their shift just 26% of the time vs 41–46% everywhere else.</li>
     </ul>
   </div>
 </section>
 
 <div class="foot">
-  <b>Method &amp; caveats.</b> Unique customers counted on mobile number, deduplicated within each month; a customer requesting in two months counts once in each. Status buckets were normalised across months — the tracker's sub-status vocabulary changed in June (a "Resolved –" prefix was introduced) and June/July taxonomies differ from April/May. July covers <b>1–19 July only</b>; monthly comparisons of outcome mix use a like-for-like cohort of tickets opened in days 1–12 so every month has had equal time to close. TAT is open-date to closing-date in calendar days. Tenure joined from Snowflake on mobile number at a 98.6% match rate (33 of 2,370 unmatched), tenure defined as first install / first router mapping, so a reinstalled customer shows their original start date rather than their current stint. <b>The tenure view is June only and uses Active Customers (15D) as the denominator</b> (98,002 as of 30 June), with tenure measured at the same reference date. Install date is the earliest of the tenure dimension and first router mapping. <b>The tracker is city-limited while the active base is all-India</b>, so absolute per-1,000 rates are understated; the relative ordering across cohorts holds only if tenure mix is similar across cities, which has not been verified. Payment figures are as recorded in the tracker, which is not reconciled against Finance disbursement. <b>PTL themes were derived by reading all 308 free-text tickets before defining any buckets</b>, then applied by rule plus a hand-audit pass; ~18% were judgement calls because most partners raise two or three issues in one call and each ticket was assigned to its dominant ask, so individual theme counts carry roughly ±10% uncertainty and the ordering matters more than the exact figures. 69 of the 308 tickets were exact-duplicate text. Tickets were deduplicated to the latest snapshot per ticket number.
+  <b>Method &amp; caveats.</b> Unique customers counted on mobile number, deduplicated within each month; a customer requesting in two months counts once in each. Status buckets were normalised across months — the tracker's sub-status vocabulary changed in June (a "Resolved –" prefix was introduced) and June/July taxonomies differ from April/May. July covers <b>1–19 July only</b>; monthly comparisons of outcome mix use a like-for-like cohort of tickets opened in days 1–12 so every month has had equal time to close. TAT is open-date to closing-date in calendar days. Tenure joined from Snowflake on mobile number at a 98.6% match rate (33 of 2,370 unmatched), tenure defined as first install / first router mapping, so a reinstalled customer shows their original start date rather than their current stint. <b>The tenure view is June only and uses Active Customers (15D) as the denominator</b> (98,002 as of 30 June), with tenure measured at the same reference date. Install date is the earliest of the tenure dimension and first router mapping. <b>The tracker is city-limited while the active base is all-India</b>, so absolute per-1,000 rates are understated; the relative ordering across cohorts holds only if tenure mix is similar across cities, which has not been verified. Payment figures are as recorded in the tracker, which is not reconciled against Finance disbursement.
 </div>
 
 </div>

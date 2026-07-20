@@ -1,0 +1,319 @@
+<title>Shifting Process — One Pager</title>
+<style>
+:root{
+  --bg:#FAF9FC; --card:#FFFFFF; --border:#D7D3E0; --text:#161021; --muted:#665E75; --soft:#A7A1B2;
+  --accent:#D9008D; --sec:#443152; --pink100:#FFE5F6; --n100:#F1EDF7;
+  --green:#008043; --green100:#E1FAED; --red:#E01E00; --red100:#FFE9E5;
+  --amber:#FF8000; --amber200:#FFE6CC; --purple:#6D17CE; --purple100:#F1E5FF;
+  --c1:#008043; --c2:#6D17CE; --c3:#FF8000; --c4:#D9008D; --c5:#665E75;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#161021;--card:#352D42;--border:#443152;--text:#FAF9FC;--muted:#A7A1B2;--soft:#665E75;--n100:#2A2336;--pink100:#3A1030;--green100:#0C2B1C;--red100:#3A1410;--amber200:#3A2410;--purple100:#241338}}
+:root[data-theme="dark"]{--bg:#161021;--card:#352D42;--border:#443152;--text:#FAF9FC;--muted:#A7A1B2;--soft:#665E75;--n100:#2A2336;--pink100:#3A1030;--green100:#0C2B1C;--red100:#3A1410;--amber200:#3A2410;--purple100:#241338}
+:root[data-theme="light"]{--bg:#FAF9FC;--card:#FFFFFF;--border:#D7D3E0;--text:#161021;--muted:#665E75;--soft:#A7A1B2;--n100:#F1EDF7;--pink100:#FFE5F6;--green100:#E1FAED;--red100:#FFE9E5;--amber200:#FFE6CC;--purple100:#F1E5FF}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Noto Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.02em}
+h2{font-size:15px;margin:0 0 12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h3{font-size:13px;margin:0 0 8px;color:var(--muted);font-weight:600}
+.sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+section{margin:0 0 26px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+
+/* process flow */
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}
+.step{flex:1 1 128px;min-width:128px;background:var(--n100);border:1px solid var(--border);border-radius:9px;padding:9px 11px;position:relative}
+.step b{display:block;font-size:11px;color:var(--accent);letter-spacing:.05em;margin-bottom:3px}
+.step span{font-size:12px;color:var(--text);line-height:1.35;display:block}
+.step.flag{background:var(--red100);border-color:var(--red)}
+.step.flag b{color:var(--red)}
+
+/* kpi */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:13px 15px}
+.kpi .lab{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.kpi .val{font-size:27px;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.kpi .note{font-size:11.5px;color:var(--muted);margin-top:4px}
+.up{color:var(--green)} .dn{color:var(--red)} .wn{color:var(--amber)}
+
+/* tables */
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:520px}
+th,td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--border);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;white-space:normal}
+thead th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;border-bottom:1.5px solid var(--border)}
+tbody tr:last-child td{border-bottom:none}
+tr.tot td{font-weight:700;background:var(--n100)}
+tr.sec td{background:var(--n100);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.mut{color:var(--muted)}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:middle}
+
+/* stacked bars */
+.bars{display:flex;flex-direction:column;gap:11px}
+.barrow{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center}
+.barlab{font-size:12px;color:var(--muted);font-weight:600}
+.bar{display:flex;height:26px;border-radius:4px;overflow:hidden;background:var(--n100)}
+.seg{position:relative;display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;color:#fff;box-shadow:0 0 0 1px var(--card) inset;min-width:0}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:11.5px;color:var(--muted)}
+.legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+
+/* callouts */
+.call{border-left:3px solid var(--accent);background:var(--pink100);padding:11px 14px;border-radius:0 8px 8px 0;font-size:13px;margin-top:12px}
+.call.warn{border-color:var(--amber);background:var(--amber200)}
+.call.good{border-color:var(--green);background:var(--green100)}
+.call.bad{border-color:var(--red);background:var(--red100)}
+.call b{color:var(--text)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+.foot{font-size:11.5px;color:var(--soft);border-top:1px solid var(--border);padding-top:12px;margin-top:8px}
+ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
+.tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;letter-spacing:.04em;text-transform:uppercase}
+.tag.g{background:var(--green100);color:var(--green)} .tag.r{background:var(--red100);color:var(--red)}
+.tag.a{background:var(--amber200);color:#8A4500} .tag.n{background:var(--n100);color:var(--muted)}
+@media (prefers-color-scheme:dark){.tag.a{color:var(--amber)}}
+</style>
+
+<div class="wrap">
+
+<h1>Shifting Process — One Pager</h1>
+<p class="sub">Customer connection-shifting requests · April – July 2026 · <b>July is 1–19 only</b> (partial month) · Source: Kapture Shifting Cases tracker + Snowflake</p>
+
+<!-- PROCESS -->
+<section>
+  <h2>The process today</h2>
+  <div class="flow">
+    <div class="step"><b>1 · Request</b><span>Customer calls to request shifting</span></div>
+    <div class="step"><b>2 · Ticket</b><span>Kapture ticket created</span></div>
+    <div class="step"><b>3 · App</b><span>Visible to partner on app</span></div>
+    <div class="step"><b>4 · Execute</b><span>Partner marks closed; PFT follows up</span></div>
+    <div class="step"><b>5 · TAT</b><span>2–3 days target</span></div>
+    <div class="step flag"><b>6 · Confirm</b><span>CX team calls customer, or confirms via ping</span></div>
+    <div class="step flag"><b>7 · Sheet</b><span>Marked confirmed on manual sheet</span></div>
+    <div class="step flag"><b>8 · Pay</b><span>Sheet handed to PTL → Finance pays partner</span></div>
+  </div>
+  <div class="call warn"><b>Steps 6–8 are the constraint.</b> Verification and payout are manual, sheet-driven and batch-run. Every number on this page that looks broken traces back to one of those three steps — not to steps 1–5.</div>
+</section>
+
+<!-- KPIs -->
+<section>
+  <h2>Headline</h2>
+  <div class="kpis">
+    <div class="kpi"><div class="lab">Unique customers (Apr–19 Jul)</div><div class="val">2,370</div><div class="note">2,783 tickets — 11% duplicate inflation</div></div>
+    <div class="kpi"><div class="lab">Verified shifted</div><div class="val">42%</div><div class="note">Rest denied, unreachable or invalid</div></div>
+    <div class="kpi"><div class="lab">Median TAT</div><div class="val">2–4 <span style="font-size:15px">days</span></div><div class="note">Meets the 2–3 day target at median</div></div>
+    <div class="kpi"><div class="lab">Payout outstanding</div><div class="val dn">₹46.3k</div><div class="note">260 partner payments unpaid</div></div>
+    <div class="kpi"><div class="lab">Shifting propensity, &lt;6-month customers</div><div class="val dn">6×</div><div class="note">vs. the average customer</div></div>
+  </div>
+</section>
+
+<!-- VOLUME -->
+<section>
+  <h2>1 · Requests received</h2>
+  <div class="card">
+    <div class="scroll"><table>
+      <thead><tr><th>Metric</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul (1–19)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Unique customers requesting</b></td><td><b>806</b></td><td><b>690</b></td><td><b>547</b></td><td><b>423</b></td></tr>
+        <tr><td>Tickets raised</td><td>883</td><td>785</td><td>635</td><td>480</td></tr>
+        <tr><td class="mut">Duplicate-ticket inflation</td><td class="mut">8.7%</td><td class="mut">12.1%</td><td class="mut">13.9%</td><td class="mut">11.9%</td></tr>
+        <tr><td class="mut">Per day</td><td class="mut">26.9</td><td class="mut">22.3</td><td class="mut">18.2</td><td class="mut">22.3</td></tr>
+        <tr class="tot"><td>Monthly run-rate</td><td>806</td><td>668</td><td>547</td><td>668</td></tr>
+      </tbody>
+    </table></div>
+    <div class="call">Volume fell 32% from April to June, then <b>rebounded in July back to May levels</b>. June was the trough, not the trend. Roughly <b>1 in 8 tickets is a duplicate</b> of a request already open for that same customer.</div>
+  </div>
+</section>
+
+<!-- CONFIRMATION -->
+<section>
+  <h2>2 · Split by confirmation status</h2>
+  <div class="card">
+    <h3>Like-for-like: customers whose ticket opened in days 1–12 of each month</h3>
+    <div class="bars">
+      <div class="barrow"><span class="barlab">April</span><div class="bar">
+        <div class="seg" style="flex:23.4;background:var(--c1)">23%</div>
+        <div class="seg" style="flex:28.8;background:var(--c2)">29%</div>
+        <div class="seg" style="flex:25.5;background:var(--c3)">26%</div>
+        <div class="seg" style="flex:7.4;background:var(--c4)">7%</div>
+        <div class="seg" style="flex:14.8;background:var(--c5)">15%</div></div></div>
+      <div class="barrow"><span class="barlab">May</span><div class="bar">
+        <div class="seg" style="flex:22.0;background:var(--c1)">22%</div>
+        <div class="seg" style="flex:22.3;background:var(--c2)">22%</div>
+        <div class="seg" style="flex:30.8;background:var(--c3)">31%</div>
+        <div class="seg" style="flex:11.1;background:var(--c4)">11%</div>
+        <div class="seg" style="flex:13.8;background:var(--c5)">14%</div></div></div>
+      <div class="barrow"><span class="barlab">June</span><div class="bar">
+        <div class="seg" style="flex:27.6;background:var(--c1)">28%</div>
+        <div class="seg" style="flex:15.9;background:var(--c2)">16%</div>
+        <div class="seg" style="flex:21.5;background:var(--c3)">21%</div>
+        <div class="seg" style="flex:16.7;background:var(--c4)">17%</div>
+        <div class="seg" style="flex:18.3;background:var(--c5)">18%</div></div></div>
+      <div class="barrow"><span class="barlab">July</span><div class="bar">
+        <div class="seg" style="flex:34.7;background:var(--c1)">35%</div>
+        <div class="seg" style="flex:1.1;background:var(--c2)"></div>
+        <div class="seg" style="flex:40.4;background:var(--c3)">40%</div>
+        <div class="seg" style="flex:19.5;background:var(--c4)">20%</div>
+        <div class="seg" style="flex:4.3;background:var(--c5)">4%</div></div></div>
+    </div>
+    <div class="legend">
+      <i><span class="sw" style="background:var(--c1)"></span>Shifted — confirmed with customer</i>
+      <i><span class="sw" style="background:var(--c2)"></span>Shifted — ping only (1% in Jul)</i>
+      <i><span class="sw" style="background:var(--c3)"></span>Open / customer unreachable</i>
+      <i><span class="sw" style="background:var(--c4)"></span>Denied or delayed</i>
+      <i><span class="sw" style="background:var(--c5)"></span>Invalid / churned out</i>
+    </div>
+
+    <div class="call good"><b>The real story: confirmation quality went up, not down.</b> Customer-confirmed shifting rose steadily <b>23% → 35%</b>. What collapsed was ping-based closure (<b>29% → 1%</b>) — the team stopped closing tickets on a router ping alone. Headline "shifted" falls from 52% to 36% only because the weaker evidence standard was withdrawn.</div>
+    <div class="call bad"><b>But the cases that used to be absorbed by ping now have nowhere to go.</b> Open/unreachable climbed to <b>40%</b> and denied/delayed to <b>20%</b>. Removing the shortcut exposed demand the calling process cannot close — it did not fix it.</div>
+
+    <h3 style="margin-top:20px">Full status detail — unique customers</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Status</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul (1–19)</th></tr></thead>
+      <tbody>
+        <tr class="sec"><td colspan="5">Shifted</td></tr>
+        <tr><td><span class="sw" style="background:var(--c1)"></span>Confirmed with customer</td><td>171</td><td>176</td><td>140</td><td>121</td></tr>
+        <tr><td><span class="sw" style="background:var(--c2)"></span>Confirmed via ping only</td><td>183</td><td>124</td><td>82</td><td>3</td></tr>
+        <tr><td><span class="sw" style="background:var(--c2)"></span>Partner already took money from customer</td><td>17</td><td>7</td><td>1</td><td>0</td></tr>
+        <tr class="sec"><td colspan="5">Not shifted</td></tr>
+        <tr><td><span class="sw" style="background:var(--c3)"></span>Confirmation pending from customer</td><td>151</td><td>125</td><td>0</td><td>56</td></tr>
+        <tr><td><span class="sw" style="background:var(--c3)"></span>Customer not reachable (DNP)</td><td>91</td><td>75</td><td>109</td><td>147</td></tr>
+        <tr><td><span class="sw" style="background:var(--c4)"></span>Customer denied / delayed</td><td>58</td><td>51</td><td>109</td><td>32</td></tr>
+        <tr><td><span class="sw" style="background:var(--c4)"></span>Partner denied / delayed</td><td>17</td><td>29</td><td>30</td><td>30</td></tr>
+        <tr><td><span class="sw" style="background:var(--c5)"></span>Invalid / wrong / duplicate ticket</td><td>65</td><td>48</td><td>45</td><td>15</td></tr>
+        <tr><td><span class="sw" style="background:var(--c5)"></span>Router pickup raised instead (churn)</td><td>50</td><td>49</td><td>27</td><td>2</td></tr>
+        <tr><td><span class="sw" style="background:var(--c5)"></span>Migrated to another partner</td><td>3</td><td>6</td><td>4</td><td>17</td></tr>
+        <tr class="tot"><td>Total unique customers</td><td>806</td><td>690</td><td>547</td><td>423</td></tr>
+      </tbody>
+    </table></div>
+    <div class="call warn"><b>Customer-unreachable (DNP) is the single largest failure mode and it is growing</b> — 91 → 147 even as total volume fell. The customer asked for the shift, then could not be reached to confirm it. <b>Roughly 1 in 16 requests ends in a router pickup or migration</b> — the shifting request is an early churn signal.</div>
+  </div>
+</section>
+
+<!-- TAT -->
+<section>
+  <h2>3 · Turnaround &amp; pendency</h2>
+  <div class="card">
+    <div class="scroll"><table>
+      <thead><tr><th>Metric</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul (1–19)</th></tr></thead>
+      <tbody>
+        <tr><td>Median TAT (days)</td><td>2</td><td>2</td><td class="dn">4</td><td>3</td></tr>
+        <tr><td>Closed within 3 days</td><td>69%</td><td>68%</td><td class="dn">48%</td><td>58%</td></tr>
+        <tr><td>P90 TAT (days)</td><td>6</td><td>6</td><td class="dn">13</td><td>6</td></tr>
+        <tr><td>Taking &gt; 7 days</td><td>1.1%</td><td>2.8%</td><td class="dn">27.5%</td><td>1.5%</td></tr>
+        <tr class="tot"><td>Still open at pull date</td><td>8.3%</td><td>7.4%</td><td>27.9%</td><td>71.9%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="call"><b>Median TAT meets the 2–3 day target</b> — the problem is the tail, not the middle. <b>June broke badly</b> (P90 of 13 days, 28% breaching a week) and has still not fully cleared: 28% of June tickets remained open. July's 72% open is expected for a mid-month pull, not a red flag.</div>
+  </div>
+</section>
+
+<!-- PAYMENT + PREMISE -->
+<section>
+  <h2>4 · Split by payment status &amp; premise</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Payment to partner</h3>
+      <div class="scroll"><table style="min-width:0">
+        <thead><tr><th></th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th></tr></thead>
+        <tbody>
+          <tr><td>Marked eligible</td><td>354</td><td>293</td><td>186</td><td class="dn">0</td></tr>
+          <tr><td>Amount assigned</td><td>379</td><td>315</td><td>197</td><td class="dn">0</td></tr>
+          <tr><td>Payout processed</td><td>379</td><td>316</td><td class="dn">61</td><td class="dn">0</td></tr>
+          <tr class="tot"><td>Amount paid</td><td>₹69.2k</td><td>₹55.7k</td><td>₹35.4k</td><td>₹0</td></tr>
+        </tbody>
+      </table></div>
+      <div class="call bad"><b>The payout pipeline has stalled.</b> June: 136 approved cases worth <b>₹24.5k unpaid</b>. July: 124 customers confirmed shifted but <b>zero</b> marked eligible, priced or paid — the cycle has not been run at all. Total outstanding: <b>₹46.3k across 260 partner payments</b>.</div>
+    </div>
+    <div class="card">
+      <h3>Premise type</h3>
+      <div class="scroll"><table style="min-width:0">
+        <thead><tr><th></th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th></tr></thead>
+        <tbody>
+          <tr><td>Outside premises <span class="mut">(₹200)</span></td><td>579</td><td>466</td><td>391</td><td>309</td></tr>
+          <tr><td>Within premises <span class="mut">(₹100)</span></td><td>227</td><td>224</td><td>156</td><td>114</td></tr>
+          <tr class="tot"><td>% outside</td><td>72%</td><td>68%</td><td>71%</td><td>73%</td></tr>
+        </tbody>
+      </table></div>
+      <div class="call"><b>The mix is stable at ~70/30</b> and the rate card is applied cleanly — ₹200 outside, ₹100 within, with only 6 exceptions in 891 priced cases. Premise type is the one part of this process that is working exactly as designed.</div>
+    </div>
+  </div>
+  <div class="call warn"><b>Data hygiene:</b> in April and May, more cases were marked "payout processed" (379, 316) than were ever marked "eligible for payment" (354, 293). The eligibility flag and the payout flag are maintained independently, so neither can be trusted as a control. Money moved without the gate being set.</div>
+</section>
+
+<!-- TENURE -->
+<section>
+  <h2>5 · View by customer tenure</h2>
+  <div class="card">
+    <div class="scroll"><table>
+      <thead><tr><th>Tenure</th><th>Requests<br>Apr–19 Jul</th><th>Customer<br>base</th><th>Requests<br>per 1,000</th><th>Propensity<br>index</th><th>Verified<br>shift rate</th><th>%<br>outside</th></tr></thead>
+      <tbody>
+        <tr><td>&lt; 3 months</td><td>54</td><td>1,434</td><td class="dn">37.7</td><td class="dn">5.6×</td><td>46%</td><td>54%</td></tr>
+        <tr><td>3–6 months</td><td>133</td><td>3,039</td><td class="dn">43.8</td><td class="dn">6.5×</td><td>43%</td><td>63%</td></tr>
+        <tr><td>6–12 months</td><td>845</td><td>93,936</td><td>9.0</td><td>1.3×</td><td>39%</td><td>70%</td></tr>
+        <tr><td>12–24 months</td><td>873</td><td>148,790</td><td>5.9</td><td>0.9×</td><td>43%</td><td>72%</td></tr>
+        <tr><td>24+ months</td><td>432</td><td>99,823</td><td class="up">4.3</td><td class="up">0.6×</td><td>46%</td><td>74%</td></tr>
+        <tr class="tot"><td>All customers</td><td>2,337</td><td>347,022</td><td>6.7</td><td>1.0×</td><td>42%</td><td>71%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="call bad"><b>The most actionable finding on this page.</b> Customers under 6 months old request shifting at <b>~40 per 1,000 — roughly 6× the average and 10× a 24-month customer</b>. They are only 1.3% of the base but generate 8% of shifting demand. A new customer is far more likely to have been installed somewhere they were not going to stay.</div>
+    <div class="call"><b>Tenure does not predict success</b> — verified shift rate sits in a flat 39–46% band across every cohort. Whatever is breaking shifting breaks it equally for a 2-month and a 3-year customer, so the fix is in the process, not in customer segmentation. Newer customers do skew more toward <b>within-premises</b> moves (46% vs 26% for 24-month customers), which points at install-quality and placement problems rather than genuine relocation.</div>
+  </div>
+</section>
+
+<!-- PTL -->
+<section>
+  <h2>6 · PTL — partner calls about shifting</h2>
+  <div class="card" id="ptl">
+<h3>308 of 23,196 partner tickets (1.3%) mention shifting — 251 are genuinely about the shifting process</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>What the partner is calling about</th><th>Total</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul (1–19)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Chasing their shifting payout</b></td><td><b>73</b></td><td>40</td><td>19</td><td>5</td><td>9</td></tr>
+        <tr><td class="mut" style="padding-left:26px">— Not received after completing the shift</td><td class="mut">38</td><td class="mut">26</td><td class="mut">7</td><td class="mut">2</td><td class="mut">3</td></tr>
+        <tr><td class="mut" style="padding-left:26px">— Extra wiring cost, who pays</td><td class="mut">17</td><td class="mut">10</td><td class="mut">4</td><td class="mut">0</td><td class="mut">3</td></tr>
+        <tr><td class="mut" style="padding-left:26px">— When / how much will I get</td><td class="mut">12</td><td class="mut">2</td><td class="mut">6</td><td class="mut">2</td><td class="mut">2</td></tr>
+        <tr><td class="mut" style="padding-left:26px">— Amount unclear or disputed</td><td class="mut">6</td><td class="mut">2</td><td class="mut">2</td><td class="mut">1</td><td class="mut">1</td></tr>
+        <tr><td>Wrong ticket type raised</td><td>40</td><td>18</td><td>7</td><td>9</td><td>6</td></tr>
+        <tr><td>Ticket stuck — app will not let them close it</td><td>38</td><td>11</td><td>5</td><td>6</td><td class="dn">16</td></tr>
+        <tr><td>Routed to an area the partner cannot serve</td><td>26</td><td>17</td><td>1</td><td>2</td><td>6</td></tr>
+        <tr><td>Customer unreachable / refusing / postponing</td><td>26</td><td>8</td><td>6</td><td>4</td><td>8</td></tr>
+        <tr><td>Netbox recovery after customer moved</td><td>24</td><td>11</td><td>3</td><td>5</td><td>5</td></tr>
+        <tr><td>Process help &amp; general queries</td><td>24</td><td>13</td><td>6</td><td>2</td><td>3</td></tr>
+        <tr class="tot"><td>Shifting-process tickets</td><td>251</td><td>118</td><td>47</td><td>33</td><td>53</td></tr>
+        <tr><td class="mut">Incidental mention (not shifting process)</td><td class="mut">45</td><td class="mut">18</td><td class="mut">9</td><td class="mut">12</td><td class="mut">6</td></tr>
+        <tr><td class="mut">₹2,000 wallet breach dispute</td><td class="mut">12</td><td class="mut">2</td><td class="mut">7</td><td class="mut">3</td><td class="mut">0</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="call bad"><b>Payout is the single biggest reason a partner calls about shifting — 73 tickets, 29% of all shifting-process calls.</b> Half of those are the blunt version: the shift was done and the money never arrived. A further 17 are partners asking who absorbs extra wiring cost, which the ₹100/₹200 flat rate card does not answer.</div>
+
+    <div class="call warn"><b>Payout complaints appear to lag the payout cycle, which makes the current low numbers misleading.</b> Complaints peaked in April (40) and fell to 5 in June — yet June and July are precisely the months whose payouts were never run. The most plausible reading is that April's spike reflects an earlier failed cycle and partners have not yet started chasing the ₹46.3k currently outstanding. <span class="mut">This is inference from the timing pattern, not established causation — but if it holds, expect a payout-complaint spike in August–September.</span></div>
+
+    <div class="call"><b>"App will not let me close the ticket" jumped to 16 in July from 6 in June</b> — the sharpest movement in the table, and it lines up with July's 40% open/unreachable rate. Some share of what the tracker records as an unresolved shift may be a shift that was physically completed but could not be closed in the app. Worth confirming with the app team before reading July's open rate as a field-execution failure.</div>
+
+    <div class="call"><b>66 tickets — over a quarter — are routing and ticket-type errors</b> (wrong TT type 40, un-serviceable area 26). These are cases where the system sent the partner something it should never have sent. That is the cheapest thing on this page to fix, and it is upstream of both the TAT and the confirmation numbers.</div>
+  </div>
+</section>
+
+<!-- SO WHAT -->
+<section>
+  <h2>What this adds up to</h2>
+  <div class="card">
+    <ul class="tight">
+      <li><b>Only ~42% of shifting requests end in a verified shift.</b> The largest single failure mode is the customer becoming unreachable after raising the request (DNP) — now 147 cases a month and rising while volume falls.</li>
+      <li><b>Withdrawing ping-based closure was the right call, but it was a measurement change, not a fix.</b> Genuine customer-confirmed shifts rose 23%→35%. The demand that ping used to absorb is now visible as open and denied cases.</li>
+      <li><b>The manual sheet is the bottleneck.</b> Confirmation, eligibility and payout are three independently-maintained columns, and they disagree with each other. June's payout is still only two-thirds unpaid seven weeks on; July's has not started.</li>
+      <li><b>Partners are financing the delay.</b> ₹46.3k across 260 payments is outstanding, and the top partner complaint on PTL is chasing exactly this money.</li>
+      <li><b>New customers are the demand driver.</b> Under-6-month customers shift at 6× the base rate. This is an install-quality signal upstream of the shifting process entirely.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="foot">
+  <b>Method &amp; caveats.</b> Unique customers counted on mobile number, deduplicated within each month; a customer requesting in two months counts once in each. Status buckets were normalised across months — the tracker's sub-status vocabulary changed in June (a "Resolved –" prefix was introduced) and June/July taxonomies differ from April/May. July covers <b>1–19 July only</b>; monthly comparisons of outcome mix use a like-for-like cohort of tickets opened in days 1–12 so every month has had equal time to close. TAT is open-date to closing-date in calendar days. Tenure joined from Snowflake on mobile number at a 98.6% match rate (33 of 2,370 unmatched), tenure defined as first install / first router mapping, so a reinstalled customer shows their original start date rather than their current stint. <b>Propensity index compares a city-limited shifting tracker against the all-India customer base</b>, so absolute per-1,000 rates are understated; the relative ordering across tenure cohorts holds only if tenure mix is similar across cities, which has not been verified. Payment figures are as recorded in the tracker, which is not reconciled against Finance disbursement. <b>PTL themes were derived by reading all 308 free-text tickets before defining any buckets</b>, then applied by rule plus a hand-audit pass; ~18% were judgement calls because most partners raise two or three issues in one call and each ticket was assigned to its dominant ask, so individual theme counts carry roughly ±10% uncertainty and the ordering matters more than the exact figures. 69 of the 308 tickets were exact-duplicate text. Tickets were deduplicated to the latest snapshot per ticket number.
+</div>
+
+</div>

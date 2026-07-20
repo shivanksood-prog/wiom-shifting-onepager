@@ -259,7 +259,7 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
         <tr class="tot"><td>All tenures</td><td>538</td><td>98,002</td><td>5.5</td><td>1.0×</td><td>41%</td><td>71%</td></tr>
       </tbody>
     </table></div>
-    <p class="mut" style="font-size:11.5px;margin:8px 0 0">9 of June's 547 requesters had no resolvable install date and are excluded. Active base uses the standard Active Customers (15D) definition — plan active within 15 days of the reference date, membership extension applied.</p>
+    <p class="mut" style="font-size:11.5px;margin:8px 0 0">9 of June's 547 requesters had no resolvable install date and are excluded. Active base uses the standard Active Customers (15D) definition — plan active within 15 days of the reference date. Cross-checked against the canonical <code>active_customers_r15</code> metric, which returns 97,623 for the same date — a 0.4% gap. The canonical source is aggregated at partner grain and cannot be split by tenure, so the customer-level rebuild here is what the split requires; the 0.4% variance does not move any rate by more than 0.1 per 1,000.</p>
 
     <div class="call"><b>Against the active base, tenure barely moves shifting demand.</b> Every cohort sits between 4.8 and 8.5 requests per 1,000 — a 1.8× spread end to end. The mild tilt toward newer customers is real but modest: <b>3–6 month customers are the most shift-prone at 1.6×</b>, and under-3-month customers are only 1.2×. Shifting is a broad-base behaviour, not a new-customer problem.</div>
 

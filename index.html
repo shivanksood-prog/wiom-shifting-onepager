@@ -105,7 +105,7 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
     <div class="kpi"><div class="lab">Verified shifted</div><div class="val">42%</div><div class="note">Rest denied, unreachable or invalid</div></div>
     <div class="kpi"><div class="lab">Median TAT</div><div class="val">2–4 <span style="font-size:15px">days</span></div><div class="note">Meets the 2–3 day target at median</div></div>
     <div class="kpi"><div class="lab">Payout outstanding</div><div class="val dn">₹46.3k</div><div class="note">260 partner payments unpaid</div></div>
-    <div class="kpi"><div class="lab">Shifting propensity, &lt;6-month customers</div><div class="val dn">6×</div><div class="note">vs. the average customer</div></div>
+    <div class="kpi"><div class="lab">Tenure spread in shifting demand</div><div class="val">1.8×</div><div class="note">Jun, vs active base — flatter than it looks</div></div>
   </div>
 </section>
 
@@ -245,21 +245,27 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
 
 <!-- TENURE -->
 <section>
-  <h2>5 · View by customer tenure</h2>
+  <h2>5 · View by customer tenure <span style="text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400">— June 2026, vs active base</span></h2>
   <div class="card">
+    <h3>Shifting requests vs <b>Active Customers (15D)</b> · reference date 30 June 2026</h3>
     <div class="scroll"><table>
-      <thead><tr><th>Tenure</th><th>Requests<br>Apr–19 Jul</th><th>Customer<br>base</th><th>Requests<br>per 1,000</th><th>Propensity<br>index</th><th>Verified<br>shift rate</th><th>%<br>outside</th></tr></thead>
+      <thead><tr><th>Tenure</th><th>June<br>requests</th><th>Active<br>base</th><th>Requests<br>per 1,000</th><th>Propensity<br>index</th><th>Verified<br>shift rate</th><th>%<br>outside</th></tr></thead>
       <tbody>
-        <tr><td>&lt; 3 months</td><td>54</td><td>1,434</td><td class="dn">37.7</td><td class="dn">5.6×</td><td>46%</td><td>54%</td></tr>
-        <tr><td>3–6 months</td><td>133</td><td>3,039</td><td class="dn">43.8</td><td class="dn">6.5×</td><td>43%</td><td>63%</td></tr>
-        <tr><td>6–12 months</td><td>845</td><td>93,936</td><td>9.0</td><td>1.3×</td><td>39%</td><td>70%</td></tr>
-        <tr><td>12–24 months</td><td>873</td><td>148,790</td><td>5.9</td><td>0.9×</td><td>43%</td><td>72%</td></tr>
-        <tr><td>24+ months</td><td>432</td><td>99,823</td><td class="up">4.3</td><td class="up">0.6×</td><td>46%</td><td>74%</td></tr>
-        <tr class="tot"><td>All customers</td><td>2,337</td><td>347,022</td><td>6.7</td><td>1.0×</td><td>42%</td><td>71%</td></tr>
+        <tr><td>&lt; 3 months</td><td>26</td><td>3,988</td><td>6.5</td><td>1.2×</td><td>46%</td><td>62%</td></tr>
+        <tr><td>3–6 months</td><td>43</td><td>5,040</td><td class="wn">8.5</td><td class="wn">1.6×</td><td class="dn">26%</td><td>70%</td></tr>
+        <tr><td>6–12 months</td><td>192</td><td>34,746</td><td>5.5</td><td>1.0×</td><td>43%</td><td>72%</td></tr>
+        <tr><td>12–24 months</td><td>185</td><td>35,077</td><td>5.3</td><td>1.0×</td><td>41%</td><td>72%</td></tr>
+        <tr><td>24+ months</td><td>92</td><td>19,151</td><td>4.8</td><td>0.9×</td><td>45%</td><td>71%</td></tr>
+        <tr class="tot"><td>All tenures</td><td>538</td><td>98,002</td><td>5.5</td><td>1.0×</td><td>41%</td><td>71%</td></tr>
       </tbody>
     </table></div>
-    <div class="call bad"><b>The most actionable finding on this page.</b> Customers under 6 months old request shifting at <b>~40 per 1,000 — roughly 6× the average and 10× a 24-month customer</b>. They are only 1.3% of the base but generate 8% of shifting demand. A new customer is far more likely to have been installed somewhere they were not going to stay.</div>
-    <div class="call"><b>Tenure does not predict success</b> — verified shift rate sits in a flat 39–46% band across every cohort. Whatever is breaking shifting breaks it equally for a 2-month and a 3-year customer, so the fix is in the process, not in customer segmentation. Newer customers do skew more toward <b>within-premises</b> moves (46% vs 26% for 24-month customers), which points at install-quality and placement problems rather than genuine relocation.</div>
+    <p class="mut" style="font-size:11.5px;margin:8px 0 0">9 of June's 547 requesters had no resolvable install date and are excluded. Active base uses the standard Active Customers (15D) definition — plan active within 15 days of the reference date, membership extension applied.</p>
+
+    <div class="call"><b>Against the active base, tenure barely moves shifting demand.</b> Every cohort sits between 4.8 and 8.5 requests per 1,000 — a 1.8× spread end to end. The mild tilt toward newer customers is real but modest: <b>3–6 month customers are the most shift-prone at 1.6×</b>, and under-3-month customers are only 1.2×. Shifting is a broad-base behaviour, not a new-customer problem.</div>
+
+    <div class="call warn"><b>Measured against the <i>total installed</i> base instead, the same data shows a 6× new-customer skew — that version is an artifact and should not be used.</b> The installed base carries a large tail of long-lapsed mature customers who inflate the 12-24 and 24+ month denominators. Once those are removed, the skew mostly disappears. Denominator choice changes this conclusion more than anything else on the page.</div>
+
+    <div class="call bad"><b>The one number that stands out is a success rate, not a volume.</b> 3–6 month customers complete their shift only <b>26% of the time</b>, against 41–46% for every other cohort. On 43 cases this is suggestive rather than conclusive, but it is the only cohort that breaks the otherwise flat pattern and is worth a look at the underlying cases.</div>
   </div>
 </section>
 
@@ -307,13 +313,13 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
       <li><b>Withdrawing ping-based closure was the right call, but it was a measurement change, not a fix.</b> Genuine customer-confirmed shifts rose 23%→35%. The demand that ping used to absorb is now visible as open and denied cases.</li>
       <li><b>The manual sheet is the bottleneck.</b> Confirmation, eligibility and payout are three independently-maintained columns, and they disagree with each other. June's payout is still only two-thirds unpaid seven weeks on; July's has not started.</li>
       <li><b>Partners are financing the delay.</b> ₹46.3k across 260 payments is outstanding, and the top partner complaint on PTL is chasing exactly this money.</li>
-      <li><b>New customers are the demand driver.</b> Under-6-month customers shift at 6× the base rate. This is an install-quality signal upstream of the shifting process entirely.</li>
+      <li><b>Tenure is not the story.</b> Against the active customer base, every tenure cohort requests shifting at 4.8–8.5 per 1,000 — a 1.8× spread. The 6× new-customer skew appears only if you use the total installed base as the denominator, which is inflated by long-lapsed customers. One genuine outlier: 3–6 month customers complete their shift just 26% of the time vs 41–46% everywhere else.</li>
     </ul>
   </div>
 </section>
 
 <div class="foot">
-  <b>Method &amp; caveats.</b> Unique customers counted on mobile number, deduplicated within each month; a customer requesting in two months counts once in each. Status buckets were normalised across months — the tracker's sub-status vocabulary changed in June (a "Resolved –" prefix was introduced) and June/July taxonomies differ from April/May. July covers <b>1–19 July only</b>; monthly comparisons of outcome mix use a like-for-like cohort of tickets opened in days 1–12 so every month has had equal time to close. TAT is open-date to closing-date in calendar days. Tenure joined from Snowflake on mobile number at a 98.6% match rate (33 of 2,370 unmatched), tenure defined as first install / first router mapping, so a reinstalled customer shows their original start date rather than their current stint. <b>Propensity index compares a city-limited shifting tracker against the all-India customer base</b>, so absolute per-1,000 rates are understated; the relative ordering across tenure cohorts holds only if tenure mix is similar across cities, which has not been verified. Payment figures are as recorded in the tracker, which is not reconciled against Finance disbursement. <b>PTL themes were derived by reading all 308 free-text tickets before defining any buckets</b>, then applied by rule plus a hand-audit pass; ~18% were judgement calls because most partners raise two or three issues in one call and each ticket was assigned to its dominant ask, so individual theme counts carry roughly ±10% uncertainty and the ordering matters more than the exact figures. 69 of the 308 tickets were exact-duplicate text. Tickets were deduplicated to the latest snapshot per ticket number.
+  <b>Method &amp; caveats.</b> Unique customers counted on mobile number, deduplicated within each month; a customer requesting in two months counts once in each. Status buckets were normalised across months — the tracker's sub-status vocabulary changed in June (a "Resolved –" prefix was introduced) and June/July taxonomies differ from April/May. July covers <b>1–19 July only</b>; monthly comparisons of outcome mix use a like-for-like cohort of tickets opened in days 1–12 so every month has had equal time to close. TAT is open-date to closing-date in calendar days. Tenure joined from Snowflake on mobile number at a 98.6% match rate (33 of 2,370 unmatched), tenure defined as first install / first router mapping, so a reinstalled customer shows their original start date rather than their current stint. <b>The tenure view is June only and uses Active Customers (15D) as the denominator</b> (98,002 as of 30 June), with tenure measured at the same reference date. Install date is the earliest of the tenure dimension and first router mapping. <b>The tracker is city-limited while the active base is all-India</b>, so absolute per-1,000 rates are understated; the relative ordering across cohorts holds only if tenure mix is similar across cities, which has not been verified. Payment figures are as recorded in the tracker, which is not reconciled against Finance disbursement. <b>PTL themes were derived by reading all 308 free-text tickets before defining any buckets</b>, then applied by rule plus a hand-audit pass; ~18% were judgement calls because most partners raise two or three issues in one call and each ticket was assigned to its dominant ask, so individual theme counts carry roughly ±10% uncertainty and the ordering matters more than the exact figures. 69 of the 308 tickets were exact-duplicate text. Tickets were deduplicated to the latest snapshot per ticket number.
 </div>
 
 </div>

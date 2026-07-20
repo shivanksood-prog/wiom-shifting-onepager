@@ -105,7 +105,7 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
     <div class="kpi"><div class="lab">Verified shifted</div><div class="val">42%</div><div class="note">Rest denied, unreachable or invalid</div></div>
     <div class="kpi"><div class="lab">Median TAT</div><div class="val">2–4 <span style="font-size:15px">days</span></div><div class="note">Meets the 2–3 day target at median</div></div>
     <div class="kpi"><div class="lab">Payout outstanding</div><div class="val dn">₹46.3k</div><div class="note">260 partner payments unpaid</div></div>
-    <div class="kpi"><div class="lab">Tenure spread in shifting demand</div><div class="val">1.8×</div><div class="note">Jun, vs active base — flatter than it looks</div></div>
+    <div class="kpi"><div class="lab">Shift requests per 1,000 active customers</div><div class="val">5.5</div><div class="note">Jun — holds across every tenure</div></div>
   </div>
 </section>
 
@@ -261,7 +261,7 @@ ul.tight{margin:6px 0 0;padding-left:18px} ul.tight li{margin-bottom:5px}
     </table></div>
     <p class="mut" style="font-size:11.5px;margin:8px 0 0">9 of June's 547 requesters had no resolvable install date and are excluded. Active base uses the standard Active Customers (15D) definition — plan active within 15 days of the reference date. Cross-checked against the canonical <code>active_customers_r15</code> metric, which returns 97,623 for the same date — a 0.4% gap. The canonical source is aggregated at partner grain and cannot be split by tenure, so the customer-level rebuild here is what the split requires; the 0.4% variance does not move any rate by more than 0.1 per 1,000.</p>
 
-    <div class="call"><b>Against the active base, tenure barely moves shifting demand.</b> Every cohort sits between 4.8 and 8.5 requests per 1,000 — a 1.8× spread end to end. The mild tilt toward newer customers is real but modest: <b>3–6 month customers are the most shift-prone at 1.6×</b>, and under-3-month customers are only 1.2×. Shifting is a broad-base behaviour, not a new-customer problem.</div>
+    <div class="call"><b>Roughly 6 in every 1,000 active customers ask to shift each month — and that holds at every tenure.</b> The rate runs 5.5 per 1,000 overall and no cohort strays far from it: the lowest is 24-month customers at 4.8, the highest is 3–6 month customers at 8.5. Shifting is a broad-base behaviour, not a new-customer problem, and there is no tenure segment worth targeting separately.</div>
 
     <div class="call warn"><b>Measured against the <i>total installed</i> base instead, the same data shows a 6× new-customer skew — that version is an artifact and should not be used.</b> The installed base carries a large tail of long-lapsed mature customers who inflate the 12-24 and 24+ month denominators. Once those are removed, the skew mostly disappears. Denominator choice changes this conclusion more than anything else on the page.</div>
 
